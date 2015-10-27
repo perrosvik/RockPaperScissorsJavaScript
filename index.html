@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Rock paper scissors</title>
+    <style>
+        p,ul,li,th,td,dd,dt,dl {font-size: 20px;color: #212121;}
+        table {border-collapse: collapse;width: 300px;margin-bottom: 10px;}
+        table,th,td {border: 1px solid #000;}
+        td {padding: 0px 10px;}
+        form {font-size: 20px;}
+        form > input {font-size: 20px;}
+    </style>
+</head>
+
+<body>
+    <h1>Rock - Paper - Scissors</h1>
+    <form id="select" onsubmit="return start()">
+        Choose either rock, paper or scissors and hit play!
+        <br>
+        <br>
+        <input type="radio" name="option" value="Rock">Rock
+        <br>
+        <input type="radio" name="option" value="Paper">Paper
+        <br>
+        <input type="radio" name="option" value="Scissors">Scissors
+        <br>
+        <br>
+        <input type="submit" value="Play!">
+        <p id="userChoice"> &nbsp;</p>
+        <p id="aiChoice"> &nbsp;</p>
+        <p id="res">&nbsp; </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="win">0</td>
+                    <td id="loss">0</td>
+                    <td id="draw">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="rockpaperscissors.js"></script>
+</body>
+</html>
