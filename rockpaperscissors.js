@@ -48,23 +48,11 @@ function compare(choice1, choice2) {
     if (choice1 === choice2) {
         draws++;
         return txtDraw;
-    } else if (choice1 === 'Rock' && choice2 === 'Scissors') {
+    } else if ((choice1 === 'Rock' && choice2 === 'Scissors') || (choice1 === 'Paper' && choice2 === 'Rock') || (choice1 === 'Scissors' && choice2 === 'Paper')) {
         wins++;
         return txtWin;
-    } else if (choice1 === 'Rock' && choice2 === 'Paper') {
-        loss++;
-        return txtLoss;
-    } else if (choice1 === 'Paper' && choice2 === 'Rock') {
-        wins++;
-        return txtWin;
-    } else if (choice1 === 'Paper' && choice2 === 'Scissors') {
-        loss++;
-        return txtLoss;
-    } else if (choice1 === 'Scissors' && choice2 === 'Rock') {
-        loss++;
-        return txtLoss;
     } else {
-        wins++;
-        return txtWin;
+        loss++;
+        return txtLoss;
     }
 }
