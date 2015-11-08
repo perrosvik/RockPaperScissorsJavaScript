@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Rock paper scissors</title>
+    <style>
+    * {
+        font-size: 20px;
+        color: #212121;
+    }
+    
+    body {
+        background-color: #FAFAFA;
+    }
+    
+    table {
+        border-collapse: collapse;
+        width: 300px;
+        margin-bottom: 10px;
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid #000;
+    }
+    
+    td {
+        padding: 0px 10px;
+    }
+    
+    img {
+    max-width: 100% !important;
+    height: auto;
+}
+    div.box-middle {
+        background-color: #fff;
+        float: left;
+        width: 90%;
+        padding: 2%;
+        margin: 3%;
+        word-wrap: break-word;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.19), 0 6px 12px rgba(0, 0, 0, 0.23);
+    }
+    
+    h1 {
+        padding: 15px;
+        color: #fff;
+        background-color: #68596c;
+        border-bottom: 5px solid #fd3d59;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    }
+    
+    .box-middle > h1:first-child {
+        margin: -2.3% -2.3% 2.3% -2.3% !important;
+    }
+    
+    div.box-left,
+    div.box-right {
+        margin: 0;
+        padding: 0;
+    }
+    
+    div.box-left {
+        float: left;
+        width: 49%;
+    }
+    
+    div.box-right {
+        float: right;
+        width: 49%;
+    }
+    
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 100%;
+    }
+    
+    @media (min-width: 768px) {
+        .container {
+            width: 750px;
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .container {
+            width: 970px;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .container {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        div.box-middle,
+        div.box-left,
+        div.box-right {
+            position: static;
+            top: 0;
+            clear: both;
+            width: 90%;
+            padding: 2%;
+            margin: 3%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <a href="https://github.com/perrosvik/RockPaperScissorsJavaScript"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <div class="container">
+        <div class="box-middle">
+            <h1>Rock - Paper - Scissors</h1>
+            <div class="box-left">
+                <form id="select" onsubmit="return start()">
+                    Choose either rock, paper or scissors and hit play!
+                    <br>
+                    <br>
+                    <label>
+                        <input type="radio" name="option" value="Rock">Rock</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="option" value="Paper">Paper</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="option" value="Scissors">Scissors</label>
+                    <br>
+                    <br>
+                    <input type="submit" value="Play!">
+                </form>
+                <p id="userChoice"> &nbsp;</p>
+                <p id="aiChoice"> &nbsp;</p>
+                <p id="res">&nbsp; </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                            <th>Draws</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="win">0</td>
+                            <td id="loss">0</td>
+                            <td id="draw">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box-right">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Rock-paper-scissors.svg" alt="RockPaperScissors Rules">
+           <p> By Enzoklop (Own work) [<a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>], <a href="https://commons.wikimedia.org/wiki/File%3ARock-paper-scissors.svg">via Wikimedia Commons</a></p>
+            </div>
+        </div>
+
+        <div class="box-middle">
+            <h1>Rock - Paper - Scissors - Lizard - Spock </h1>
+            <div class="box-left">
+                <form id="select" onsubmit="return startExpansion()">
+                    Choose either rock, paper, scissors, lizard or spock and hit play!
+                    <br>
+                    <br>
+                    <label>
+                        <input type="radio" name="expansion" value="Rock">Rock</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="expansion" value="Paper">Paper</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="expansion" value="Scissors">Scissors</label>
+                    <br>
+                       <label>
+                        <input type="radio" name="expansion" value="Lizard">Lizard</label>
+                    <br>
+                       <label>
+                        <input type="radio" name="expansion" value="Spock">Spock</label>
+                    <br>
+                    <br>
+                    <input type="submit" value="Play!">
+                </form>
+                <p id="userChoiceEx"> &nbsp;</p>
+                <p id="aiChoiceEx"> &nbsp;</p>
+                <p id="resEx">&nbsp; </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                            <th>Draws</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="winEx">0</td>
+                            <td id="lossEx">0</td>
+                            <td id="drawEx">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box-right">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Pierre_ciseaux_feuille_l%C3%A9zard_spock_aligned.svg" alt="Lizard Spock Rules">
+           <p>
+               By DMacks [<a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a> or <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>], <a href="https://commons.wikimedia.org/wiki/File%3APierre_ciseaux_feuille_l%C3%A9zard_spock_aligned.svg">via Wikimedia Commons</a>
+           </p>
+
+            </div>
+        </div>
+    </div>
+    <script src="rockpaperscissors.js"></script>
+    <script src="lizardspockexpansion.js"></script>
+</body>
+
+</html>
