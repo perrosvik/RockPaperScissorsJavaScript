@@ -16,6 +16,7 @@ function start() {
 
     if (userChoice === null) {
         document.getElementById('userChoice').innerHTML = 'Please choose an option!';
+        document.getElementById('userChoice').style.color = 'red';
     } else {
         document.getElementById('userChoice').innerHTML = 'You chose: ' + userChoice;
         document.getElementById('aiChoice').innerHTML = 'The computer chose: ' + computerChoice;

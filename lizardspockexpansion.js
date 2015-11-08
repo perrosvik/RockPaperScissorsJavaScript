@@ -16,6 +16,7 @@ function startExpansion() {
 
     if (userChoiceEx === null) {
         document.getElementById('userChoiceEx').innerHTML = 'Please choose an option!';
+        document.getElementById('userChoiceEx').style.color = 'red';
     } else {
         document.getElementById('userChoiceEx').innerHTML = 'You chose: ' + userChoiceEx;
         document.getElementById('aiChoiceEx').innerHTML = 'The computer chose: ' + computerChoiceEx;
