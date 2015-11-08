@@ -19,6 +19,7 @@ function startExpansion() {
         document.getElementById('userChoiceEx').style.color = 'red';
     } else {
         document.getElementById('userChoiceEx').innerHTML = 'You chose: ' + userChoiceEx;
+         document.getElementById('userChoiceEx').style.color = '';
         document.getElementById('aiChoiceEx').innerHTML = 'The computer chose: ' + computerChoiceEx;
 
         var winnerEx = compareExpansion(userChoiceEx, computerChoiceEx);
