@@ -51,7 +51,7 @@ function compareExpansion(choice1, choice2) {
     var txtLossEx = 'The computer won. Try again';
 
     if (choice1 === choice2) {
-        drawExs++;
+        drawsEx++;
         return txtDrawEx;
     } else if ((choice1 === 'Rock' && choice2 === 'Scissors') || 
                     (choice1 === 'Rock' && choice2 === 'Lizard') ||
