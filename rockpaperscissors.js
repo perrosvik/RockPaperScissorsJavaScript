@@ -19,6 +19,7 @@ function start() {
         document.getElementById('userChoice').style.color = 'red';
     } else {
         document.getElementById('userChoice').innerHTML = 'You chose: ' + userChoice;
+        document.getElementById('userChoice').style.color = '';
         document.getElementById('aiChoice').innerHTML = 'The computer chose: ' + computerChoice;
 
         var winner = compare(userChoice, computerChoice);
